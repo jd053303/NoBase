@@ -1,0 +1,150 @@
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+audio {
+	display: none;
+}
+
+.content {
+	display: flex;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+
+.button {
+
+	font-weight: bold;
+	width: auto;
+	vertical-align: middle;
+	text-decoration: none;
+	color: white;
+	border-radius: 2px;
+}
+
+.button:focus, .button:hover {
+	color: red;
+	border-color: #2d2e36;
+	outline: none;
+}
+
+.button:focus {
+	color: #89939B;
+}
+
+.button .fa {
+	vertical-align: middle;
+}
+
+.launchpad {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: opacity 0.3s ease-in-out;
+	position: relative;
+}
+
+.box {
+	position: relative;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+}
+
+.box:hover {
+	z-index: 100;
+}
+
+.player {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 10px 0 0 10px;
+}
+
+.launchpad label span {
+	position: relative;
+	display: block;
+	width: 70px;
+    height: 70px;
+    margin: 0.5vh;
+	border: 2px solid gray;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.launchpad label input[type=checkbox]:checked ~ span {background: white;}
+.launchpad label.active input[type=checkbox]:checked ~ span {background: yellow;}
+.launchpad label input {display: none;}
+.launchpad .active span {border-color: yellow;}
+
+.player .button,input[type=number] {
+	margin: 5px;
+	padding: 0;
+	text-align: center;
+	border: none;
+	background: none;
+	transition: all 0.5s;
+}
+
+input[type=number] {
+	border: none;
+	-moz-appearance: textfield;
+	color: #89939B;
+}
+
+input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;}
+
+.launchpad img {
+	position: relative;
+	z-index: 10;
+	width: 70px;
+	height: 70px;
+	margin: 0.5vh;
+	border-radius: 3px;
+	-webkit-transition: -webkit-transform 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out;
+}
+
+.launchpad img {pointer-events: none;}
+.button-keys {display: none;}
+@media ( max-width:1740px ) {
+	.launchpad label span 
+	{
+		width: 60px ;
+		height: 60px ;
+	}
+	.launchpad img 
+	{
+		width: 60px ;
+		height: 60px ;
+	}
+}
+
+@media ( max-width:1530px ) {
+	.launchpad label span 
+	{
+		width: 50px ;
+		height: 50px ;
+	}
+	.launchpad img 
+	{
+		width: 50px ;
+		height: 50px ;
+	}
+}
+
+@media ( max-width:1360px ) {
+	.launchpad label span 
+	{
+		width: 40px ;
+		height: 40px ;
+	}
+	.launchpad img 
+	{
+		width: 40px ;
+		height: 40px ;
+	}
+}

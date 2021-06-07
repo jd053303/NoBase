@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/drum.css">
+    <title>-*-*RYTHEM GOZA*-*-</title>
+</head>
+<body>
+	<div class="midnight">
+
+		<!-- 첫 페이지 -->
+    	<div class="first_popup">
+					<div class="left-side">
+						<div class="start_darkness">
+							<img src="./img/logo.png" width="150px" alt="first-logo" class="first-logo">
+							<!--첫 페이지 옆에 추가적으로 꾸미고 싶은 요소 있음 여기에 추가-->
+						</div>
+					</div>
+				
+						<div class="right-side">
+							<span id="new-project"	onclick="new_project_first();"><img width="50px" src="./img/new-project.png" alt="new-project"><i>새 프로젝트</i></span>
+							<span id="open-project" onclick="open_project();"> <img width="50px" src="./img/open-project.png" alt="open-project"> <i>프로젝트 열기</i></span>
+							<span id="open-demo"> <img width="50px" src="./img/demo-open.png" alt="open-demo"> <i>데모 프로젝트 보기</i></span>
+							<span id="open-guide"> <img width="50px" src="./img/guide.png" alt="open-guide"> <i>사용 가이드 보기</i></span>
+						</div>							
+			
+    	</div>
+    	<!-- 여기까지 -->
+
+		<div class="new_project_popup">
+			<h2>새 프로젝트</h2>
+			<input type="text" placeholder="프로젝트 명 입력">
+			<div class="command">
+				<button onclick="new_project_popup_cancel();">취소</button>
+				<button onclick="create_new_project();">생성</button>
+			</div>	
+		</div>
+		<div class="save_project_popup">
+			<h2>저장할 파일 명 입력</h2>
+			<input type="text" placeholder="파일 명 입력">
+			<div class="command">
+				<button onclick="save_project_popup_cancel();">취소</button>
+				<button onclick="save_project_func();">저장</button>
+			</div>	
+		</div>
+		<div class="change_project_name_popup">
+			<h2>프로젝트 명 입력</h2>
+			<input type="text" placeholder="프로젝트 명 입력">
+			<div class="command">
+				<button onclick="change_project_name_popup_cancel();">취소</button>
+				<button onclick="change_project_name_func();">변경</button>
+			</div>	
+		</div>
+		<div class="info_popup">
+			<h2>정보</h2>
+			<!-- 프로그램 정보 -->
+			<div class="command">
+				<button onclick="info_popup_cancel();">확인</button>
+			</div>	
+		</div>
+		<!-- 프로젝트 보는 창 추가 html -->
+		<div class="view_project">
+		</div>
+	</div>
+    <header>
+        <div class="title">New Project</div>
+        <div class="saved">Unsaved</div>
+		<div class="overflow">
+			<div class="status">
+				<div class="temp_pause"></div>
+				<div class="play"></div>
+				<div class="pause"></div>
+			</div>
+		</div>
+        <div class="metronome">
+
+		</div>       
+		
+        <div class="rythem">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+        </div>  
+        <div class="line">|</div>
+        <div class="bpm">
+            <img src="./img/bpm.png" alt="bpm">
+            <div class="adjust_bpm">
+				<div class="bpm_up">+</div>
+				<input id="bpm" type="number" min="100" max="300" size="3" value="150" readonly="">
+				<div class="bpm_down">-</div>
+            </div>
+		</div>     
+	</header>
+	<div class="popup_menu">
+		<span onclick="new_project();">새 프로젝트</span>
+		<span onclick="save_project();">저장</span>
+		<span onclick="change_project_name();">프로젝트 명 변경</span>
+		<span onclick="open_project();">프로젝트 열기</span>
+		<span onclick="info();">정보</span>
+	</div>
+	<div class="menu_btn" onclick="open_menu();"></div>  
+
+
+
+    <div class="main">
+        <div class="content">
+            <div class="launchpad">
+					<!-- 작동 영역-->
+					<div class="playarea" id="playarea">
+						<div class="box" drum="crash">
+							<img src="img/crash.png" alt="crash">
+							<label><input type="checkbox" id="crash_0"><span></span></label>
+							<label><input type="checkbox" id="crash_1"><span></span></label>
+							<label><input type="checkbox" id="crash_2"><span></span></label>
+							<label><input type="checkbox" id="crash_3"><span></span></label>
+							<label><input type="checkbox" id="crash_4"><span></span></label>
+							<label><input type="checkbox" id="crash_5"><span></span></label>
+							<label><input type="checkbox" id="crash_6"><span></span></label>
+							<label><input type="checkbox" id="crash_7"><span></span></label>
+							<label><input type="checkbox" id="crash_8"><span></span></label>
+							<label><input type="checkbox" id="crash_9"><span></span></label>
+							<label><input type="checkbox" id="crash_10"><span></span></label>
+							<label><input type="checkbox" id="crash_11"><span></span></label>
+							<label><input type="checkbox" id="crash_12"><span></span></label>
+							<label><input type="checkbox" id="crash_13"><span></span></label>
+							<label><input type="checkbox" id="crash_14"><span></span></label>
+							<label><input type="checkbox" id="crash_15"><span></span></label>
+						</div>
+
+						<div class="box" drum="hiHat">
+							<img src="img/hi-hat.png" alt="hihat">
+							<label><input type="checkbox" id="hihat_0"><span></span></label>
+							<label><input type="checkbox" id="hihat_1"><span></span></label>
+							<label><input type="checkbox" id="hihat_2"><span></span></label>
+							<label><input type="checkbox" id="hihat_3"><span></span></label>
+							<label><input type="checkbox" id="hihat_4"><span></span></label>
+							<label><input type="checkbox" id="hihat_5"><span></span></label>
+							<label><input type="checkbox" id="hihat_6"><span></span></label>
+							<label><input type="checkbox" id="hihat_7"><span></span></label>
+							<label><input type="checkbox" id="hihat_8"><span></span></label>
+							<label><input type="checkbox" id="hihat_9"><span></span></label>
+							<label><input type="checkbox" id="hihat_10"><span></span></label>
+							<label><input type="checkbox" id="hihat_11"><span></span></label>
+							<label><input type="checkbox" id="hihat_12"><span></span></label>
+							<label><input type="checkbox" id="hihat_13"><span></span></label>
+							<label><input type="checkbox" id="hihat_14"><span></span></label>
+							<label><input type="checkbox" id="hihat_15"><span></span></label>
+						</div>
+
+						<div class="box" drum="snare">
+							<img src="img/snare.png" alt="snare">
+							<label><input type="checkbox" id="snare_0"><span></span></label>
+							<label><input type="checkbox" id="snare_1"><span></span></label>
+							<label><input type="checkbox" id="snare_2"><span></span></label>
+							<label><input type="checkbox" id="snare_3"><span></span></label>
+							<label><input type="checkbox" id="snare_4"><span></span></label>
+							<label><input type="checkbox" id="snare_5"><span></span></label>
+							<label><input type="checkbox" id="snare_6"><span></span></label>
+							<label><input type="checkbox" id="snare_7"><span></span></label>
+							<label><input type="checkbox" id="snare_8"><span></span></label>
+							<label><input type="checkbox" id="snare_9"><span></span></label>
+							<label><input type="checkbox" id="snare_10"><span></span></label>
+							<label><input type="checkbox" id="snare_11"><span></span></label>
+							<label><input type="checkbox" id="snare_12"><span></span></label>
+							<label><input type="checkbox" id="snare_13"><span></span></label>
+							<label><input type="checkbox" id="snare_14"><span></span></label>
+							<label><input type="checkbox" id="snare_15"><span></span></label>
+						</div>
+
+						<div class="box" drum="kick">
+							<img src="img/kick.png" alt="kick">
+							<label><input type="checkbox" id="kick_0"><span></span></label>
+							<label><input type="checkbox" id="kick_1"><span></span></label>
+							<label><input type="checkbox" id="kick_2"><span></span></label>
+							<label><input type="checkbox" id="kick_3"><span></span></label>
+							<label><input type="checkbox" id="kick_4"><span></span></label>
+							<label><input type="checkbox" id="kick_5"><span></span></label>
+							<label><input type="checkbox" id="kick_6"><span></span></label>
+							<label><input type="checkbox" id="kick_7"><span></span></label>
+							<label><input type="checkbox" id="kick_8"><span></span></label>
+							<label><input type="checkbox" id="kick_9"><span></span></label>
+							<label><input type="checkbox" id="kick_10"><span></span></label>
+							<label><input type="checkbox" id="kick_11"><span></span></label>
+							<label><input type="checkbox" id="kick_12"><span></span></label>
+							<label><input type="checkbox" id="kick_13"><span></span></label>
+							<label><input type="checkbox" id="kick_14"><span></span></label>
+							<label><input type="checkbox" id="kick_15"><span></span></label>
+						</div><br></br>
+
+						<!-- 기타 palm-mute -->
+						<div class="box" guitar="palm">
+							<img src="img/kick.png" alt="palm">
+							<label><input type="checkbox" id="palm_0"><span></span></label>
+							<label><input type="checkbox" id="palm_1"><span></span></label>
+							<label><input type="checkbox" id="palm_2"><span></span></label>
+							<label><input type="checkbox" id="palm_3"><span></span></label>
+							<label><input type="checkbox" id="palm_4"><span></span></label>
+							<label><input type="checkbox" id="palm_5"><span></span></label>
+							<label><input type="checkbox" id="palm_6"><span></span></label>
+							<label><input type="checkbox" id="palm_7"><span></span></label>
+							<label><input type="checkbox" id="palm_8"><span></span></label>
+							<label><input type="checkbox" id="palm_9"><span></span></label>
+							<label><input type="checkbox" id="palm_10"><span></span></label>
+							<label><input type="checkbox" id="palm_11"><span></span></label>
+							<label><input type="checkbox" id="palm_12"><span></span></label>
+							<label><input type="checkbox" id="palm_13"><span></span></label>
+							<label><input type="checkbox" id="palm_14"><span></span></label>
+							<label><input type="checkbox" id="palm_15"><span></span></label>
+						</div><br>
+
+						<!-- 기타 Drive -->
+						<div class="box" guitar="drive">
+							<img src="img/kick.png" alt="drive">
+							<label><input type="checkbox" id="drive_0"><span></span></label>
+							<label><input type="checkbox" id="drive_1"><span></span></label>
+							<label><input type="checkbox" id="drive_2"><span></span></label>
+							<label><input type="checkbox" id="drive_3"><span></span></label>
+							<label><input type="checkbox" id="drive_4"><span></span></label>
+							<label><input type="checkbox" id="drive_5"><span></span></label>
+							<label><input type="checkbox" id="drive_6"><span></span></label>
+							<label><input type="checkbox" id="drive_7"><span></span></label>
+							<label><input type="checkbox" id="drive_8"><span></span></label>
+							<label><input type="checkbox" id="drive_9"><span></span></label>
+							<label><input type="checkbox" id="drive_10"><span></span></label>
+							<label><input type="checkbox" id="drive_11"><span></span></label>
+							<label><input type="checkbox" id="drive_12"><span></span></label>
+							<label><input type="checkbox" id="drive_13"><span></span></label>
+							<label><input type="checkbox" id="drive_14"><span></span></label>
+							<label><input type="checkbox" id="drive_15"><span></span></label>
+						</div><br>
+					</div>
+				</div>
+            
+            <!-- Drum 사운드 -->
+            <audio id="Drum-crash" preload="auto"><source src="mp3/drum/Crash.mp3" type="audio/mp3"></audio>
+            <audio id="Drum-hihat" preload="auto"><source src="mp3/drum/Hi-Hat.mp3" type="audio/mp3"></audio>
+            <audio id="Drum-kick" preload="auto"><source src="mp3/drum/Kick.mp3" type="audio/mp3"></audio>
+            <audio id="Drum-snare" preload="auto"><source src="mp3/drum/Snare.mp3" type="audio/mp3"></audio>
+
+            <!-- Guitar 사운드 (아직 사운드 없음) -->
+        <!--
+            * 팜 뮤트 사운드
+            <audio id="palm-F5" preload="auto"><source src="mp3/guitar/palm/palm-F5.mp3" type="audio/mp3"></audio>
+            <audio id="palm-E5" preload="auto"><source src="mp3/guitar/palm/palm-E5.mp3" type="audio/mp3"></audio>
+            <audio id="palm-A5" preload="auto"><source src="mp3/guitar/palm/palm-A5.mp3" type="audio/mp3"></audio>
+            <audio id="palm-D5" preload="auto"><source src="mp3/guitar/palm/palm-D5.mp3" type="audio/mp3"></audio>
+            <audio id="palm-G5" preload="auto"><source src="mp3/guitar/palm/palm-G5.mp3" type="audio/mp3"></audio>
+            <audio id="palm-B5" preload="auto"><source src="mp3/guitar/palm/palm-B5.mp3" type="audio/mp3"></audio>
+            <audio id="palm-C5" preload="auto"><source src="mp3/guitar/palm/palm-C5.mp3" type="audio/mp3"></audio>
+
+			* 드라이브 사운드
+            <audio id="drive-F5" preload="auto"><source src="mp3/guitar/drive/drive-F5.mp3" type="audio/mp3"></audio>
+            <audio id="drive-E5" preload="auto"><source src="mp3/guitar/drive/drive-E5.mp3" type="audio/mp3"></audio>
+            <audio id="drive-A5" preload="auto"><source src="mp3/guitar/drive/drive-A5.mp3" type="audio/mp3"></audio>
+            <audio id="drive-D5" preload="auto"><source src="mp3/guitar/drive/drive-D5.mp3" type="audio/mp3"></audio>
+            <audio id="drive-G5" preload="auto"><source src="mp3/guitar/drive/drive-G5.mp3" type="audio/mp3"></audio>
+            <audio id="drive-B5" preload="auto"><source src="mp3/guitar/drive/drive-B5.mp3" type="audio/mp3"></audio>
+            <audio id="drive-C5" preload="auto"><source src="mp3/guitar/drive/drive-C5.mp3" type="audio/mp3"></audio>
+        -->
+        </div>
+        <div class="sidebar">
+    
+        </div>
+    </div>
+    
+</body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/script.js"></script>
+<script src="./js/TweenMax-1.17.0.min.js"></script>
+<script src="./js/bpm.js"></script>
+<script src="./js/sound.js"></script>
+<script src="./js/drum_script.js"></script>
+</html>
